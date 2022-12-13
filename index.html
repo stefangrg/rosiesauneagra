@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/custom.js"></script>
+<title>12Bet</title>
+</head>
+
+<body>
+
+<h1 id="top-text">12Bet</h1>
+
+<div id="game-container">
+
+<img src="img/cards/0.png" id="maincard" class="card"/>
+
+<div id="prev-cards">
+<img src="img/cards/0.png" class="card" id="prev2"/>
+<img src="img/cards/0.png" class="card" id="prev1"/>
+<img src="img/cards/0.png" class="card" id="prev0"/>
+</div>
+<br><br><br><br>
+<span id="bet-text">Cat vrei sa pariezi? </span><input type="text" id="bet" value="100" maxlength="5"/><br><br>
+<input type="button" value="Rosie" id="red-button" class="button" disabled/>
+<input type="button" value="Neagra" id="black-button" class="button" disabled/>
+<h2 id="money"></h2>
+<h2 id="controls">Tastatura: R = Rosie | N = Neagra</h2>
+</div>
+
+
+<div id="start-container">
+<span id="money-text">Credite:  </span>
+<input type="text" name="money" id="money-input" maxlength="6" />
+<input type="button" value="Start" id="start-button"/>
+</div>
+
+<h2 id="bottom-text"></h2>
+</body>
+
+</html>

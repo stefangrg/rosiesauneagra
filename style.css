@@ -1,0 +1,135 @@
+body{
+	background:url("img/bg.jpg");
+	color: white;
+}
+
+#top-text{
+	background-color:rgba(0, 0, 0, 0.2);
+	text-align: center;
+	font-family: "Rockwell";
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+#game-container{
+	position: relative;
+	padding: 15px;
+	background-color:rgba(0, 0, 0, 0.4);
+	width:700px;
+	height:500px;
+	margin: 0 auto;
+	border-radius: 5px;
+	text-align:center;
+	display:none;
+}
+
+#prev-cards{
+	float:right;
+}
+
+#red-button{
+	padding: 20px;
+	color:white;
+	background-color: #b22323;
+	border-radius: 5px;
+	margin-right:20px;
+	font-family: "Rockwell";
+	font-size: 18px;
+	border: 2px solid white;
+}
+
+#black-button{
+	padding: 20px;
+	color:white;
+	background-color: black;
+	border-radius: 5px;
+	font-family: "Rockwell";
+	font-size: 18px;
+	border: 2px solid white;
+}
+
+#money{
+	float: left;
+	position: absolute;
+	bottom:0;
+	background-color: rgba(0, 0, 0,0.4);
+	padding: 10px;
+	border-radius: 5px;
+	color:yellow;
+}
+
+#bottom-text{
+	position: absolute;
+	bottom: 0;
+	left: 10;
+	color:rgba(255,255,255,0.5);
+	font-size: 21px;
+	background-color: rgba(0,0,0,0.4);
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.card:hover{
+	opacity: 0.8;
+}
+
+#bet{
+	border-radius: 5px;
+	font-size:20px;
+	border: 0px solid black;
+	margin-left: 10px;
+	width: 75px;
+	text-align:center;
+}
+
+#bet-text{
+	font-size:20px;
+	font-weight: bold;
+}
+
+#money:hover{
+	color:white;
+}
+
+#controls{
+	position: absolute;
+	bottom:0;
+	right: 20px;
+	background-color: rgba(0, 0, 0,0.5);
+	padding: 10px;
+	border-radius: 5px;
+	color:white;
+	font-size:15px;
+}
+
+#start-container{
+	width: 500px;
+	background-color: rgba(0,0,0,0.5);
+	margin: 0 auto;
+	margin-top: 200px;
+	padding:50px;
+	border-radius: 10px;
+	text-align:center;
+}
+
+#money-text{
+	font-size:30px;
+}
+
+#money-input{
+	font-size:20px;
+	width: 120px;
+	padding: 5px;
+	border-radius: 5px;
+	border:0;
+}
+
+#start-button{
+	font-size:15px;
+	background-color:#1e7f2b;
+	color: white;
+	border-radius: 5px;
+	padding: 10px;
+	border:2px solid #fff;
+	margin-left: 15px;
+}
