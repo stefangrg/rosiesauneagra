@@ -6,17 +6,17 @@ var back_card = {
 }
 
 var cards = [back_card,back_card,back_card];
+var audio = new Audio('music/bgsong.mp3');
+var audioPlaying = false;
+
+audio.loop = true;
+audio.volume = 0.3;
 
 $( document ).ready(function() {
     $("#prev0").attr("src",back_card['src']);
     $("#prev1").attr("src",back_card['src']);
     $("#prev2").attr("src",back_card['src']);
     $("#bottom-text").text("Rosie sau neagra ?");
-
-    var audio = new Audio('music/bgsong.mp3');
-    audio.loop = true;
-    audio.volume = 0.3;
-	audio.play();
 
     $("#red-button").on('click',function(){
     	roll(1);
@@ -32,6 +32,8 @@ $( document ).ready(function() {
     		alert("Introduceti suma de bani!");
     	    return;
     	}
+
+		toggleAudio();
     	
     	$("#start-container").css("display","none");
     	$("#game-container").css("display","block");
@@ -57,13 +59,28 @@ $( document ).ready(function() {
     		
     });
 
+	$("#mute-button").on('click',function(){
+		toggleAudio();
+	});
+
 });
+
+function toggleAudio(){
+	if(audioPlaying){
+		audio.pause();
+		audioPlaying = false;
+	}
+	else{
+		audio.play();
+		audioPlaying = true;
+	}
+}
 
 function roll(number){
 	var bet = parseInt($("#bet").val());
 	if(money <= 0 || bet > money || bet == 0 || $("#bet").val() == '' || isNaN($("#bet").val()))
 	{
-		alert("Suma insuficienta!");
+		alert("Nu ai suficiente credite! :(");
 	 	return;
 	}
 	$("#red-button").prop("disabled",true);
