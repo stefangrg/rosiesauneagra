@@ -50,6 +50,14 @@ body{
 	background-color: black;
 }
 
+.button.button-bet-ammount{
+	padding:0;
+	width: 25px;
+	height: 25px;
+	background-color:black;
+	margin:0;
+}
+
 #money{
 	float: left;
 	position: absolute;
@@ -80,6 +88,7 @@ body{
 	font-size:20px;
 	border: 0px solid black;
 	margin-left: 10px;
+	margin-right: 10px;
 	width: 75px;
 	text-align:center;
 }
@@ -101,7 +110,7 @@ body{
 	padding: 10px;
 	border-radius: 5px;
 	color:white;
-	font-size:15px;
+	font-size:14px;
 }
 
 #start-container{

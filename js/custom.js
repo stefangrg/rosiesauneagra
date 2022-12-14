@@ -47,20 +47,35 @@ $( document ).ready(function() {
 
     $(document).on("keydown",function(e){
     	if( !$("#red-button").prop("disabled") && !$("#black-button").prop("disabled")  ){
-    		if(e.which == 82) $("#red-button").click();
-    		if(e.which == 78) $("#black-button").click();
+    		if(e.which == 37) $("#red-button").click();
+    		if(e.which == 39) $("#black-button").click();
     	}
 
     	if(e.which == 13){
     			if($("#start-container").css("display") != "none"){
     			 $("#start-button").click();
     			}
-    		}
+    	}
+
+		if(e.which == 38){
+			$("#bet-increase").click();
+		}
+		if(e.which == 40){
+			$("#bet-decrease").click();
+		}
     		
     });
 
 	$("#mute-button").on('click',function(){
 		toggleAudio();
+	});
+
+	$("#bet-increase").on('click',function(){
+		changeBet(100);
+	});
+
+	$("#bet-decrease").on('click',function(){
+		changeBet(-100);
 	});
 
 });
@@ -137,4 +152,12 @@ function addPrev(card){
 	$("#prev0").attr("src",cards[0].src);
     $("#prev1").attr("src",cards[1].src);
     $("#prev2").attr("src",cards[2].src);
+}
+
+function changeBet(value){
+	var betInput = $("#bet");
+	var bet = parseInt(betInput.val());
+	var newBet = bet + value;
+	if(newBet >= 0)
+		betInput.val(newBet);
 }
