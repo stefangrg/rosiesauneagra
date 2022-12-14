@@ -7,10 +7,18 @@ var back_card = {
 
 var cards = [back_card,back_card,back_card];
 var audio = new Audio('music/bgsong.mp3');
+var winSound = new Audio('music/win-sound.wav');
+var cardSound = new Audio('music/bet-sound.wav');
+
 var audioPlaying = false;
 
 audio.loop = true;
 audio.volume = 0.3;
+
+winSound.volume = 0.7;
+winSound.loop = false;
+cardSound.volume = 0.7;
+cardSound.loop = false;
 
 $( document ).ready(function() {
     $("#prev0").attr("src",back_card['src']);
@@ -20,9 +28,11 @@ $( document ).ready(function() {
 
     $("#red-button").on('click',function(){
     	roll(1);
+		cardSound.play();
     });
     $("#black-button").on('click',function(){
     	roll(0);
+		cardSound.play();
     });
 
     $("#start-button").on('click',function(){
@@ -105,7 +115,7 @@ function roll(number){
 	$("#money").text(money + moneda);
 
 	var randcard = parseInt(getRandom(1,53));
-	console.log(randcard);
+	//console.log(randcard);
 	var randcardsrc = "img/cards/"+randcard+".png";
 	var color = getColor(randcard);
 
@@ -119,6 +129,10 @@ function roll(number){
 		$("#maincard").attr("src",newcard['src']);
 		if(color == number){
 			money += bet*2;
+			winSound.play();
+			var winTextElement = $(".win-text");
+			winTextElement.text("+" + bet*2);
+			winTextElement.fadeIn(200).fadeOut(1300);
 		}
 		$("#money").text(money + moneda);
 	});

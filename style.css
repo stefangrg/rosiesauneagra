@@ -32,9 +32,10 @@ body{
 .button{
 	font-size: 18px;
 	border: 2px solid white;
-	padding: 20px;
 	color:white;
 	margin: 0 10px;
+	width: 100px;
+	height: 60px;
 }
 
 .button:hover{
@@ -150,11 +151,20 @@ body{
 	bottom: 20px;
 	right:20px;
 	background-color:rgb(50 97 195);
-	padding:5px;
 	font-size: 0.9rem;
 	border:1px solid #ffffff;
+	width: 60px;
+	height: 30px;
 }
 
 .button-mute:hover{
 	cursor: pointer;
+}
+
+.win-text{
+	color: #0deb2b;
+    display: none;
+    position: absolute;
+    bottom: 55px;
+    left: 15px;
 }
